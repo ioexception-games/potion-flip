@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class NumberWizard : MonoBehaviour
 {
     [SerializeField]
@@ -9,6 +9,9 @@ public class NumberWizard : MonoBehaviour
 
     [SerializeField]
     int min;
+
+    [SerializeField]
+    TextMeshProUGUI guessText;
 
     int currentGuess;
 
@@ -40,6 +43,7 @@ public class NumberWizard : MonoBehaviour
     void NextGuess()
     {
         currentGuess =  (max + min) / 2;
+        guessText.text = currentGuess.ToString();
     }
 
 }
