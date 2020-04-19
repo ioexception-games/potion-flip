@@ -5,15 +5,17 @@ using TMPro;
 public class NumberWizard : MonoBehaviour
 {
     [SerializeField]
-    int max;
+    int gameMax;
 
     [SerializeField]
-    int min;
+    int gameMin;
 
     [SerializeField]
     TextMeshProUGUI guessText;
 
     int currentGuess;
+    int max;
+    int min;
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +35,10 @@ public class NumberWizard : MonoBehaviour
         NextGuess();
     }
 
-    void StartGame()
+    public void StartGame()
     {
-        max = max + 1;
+        max = gameMax + 1;
+        min = gameMin;
 
         NextGuess();
     }
